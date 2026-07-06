@@ -9,9 +9,9 @@
     body{
         margin:0;
         padding:40px;
-        background:#fff6fa;
-        font-family: "Tahoma", sans-serif;
-        color:#555;
+        background:linear-gradient(135deg,#fff8fb,#ffeef5);
+        font-family:"Tahoma",sans-serif;
+        color:#666;
     }
 
     table{
@@ -19,43 +19,80 @@
         margin:auto;
         border-collapse:collapse;
         background:#ffffff;
-        border-radius:15px;
+        border-radius:18px;
         overflow:hidden;
-        box-shadow:0 8px 20px rgba(255,182,193,.25);
+        box-shadow:0 10px 25px rgba(255,182,193,.25);
     }
 
     thead{
-        background:#f8b6c8;
+        background:#f7a9c4;
         color:white;
     }
 
     th{
-        padding:16px;
-        font-size:16px;
+        padding:18px;
+        font-size:17px;
         letter-spacing:.5px;
     }
 
     td{
-        padding:14px;
+        padding:16px;
         text-align:center;
-        border-bottom:1px solid #f8dbe5;
+        border-bottom:1px solid #ffe0ea;
         transition:.3s;
     }
 
     tr:nth-child(even){
-        background:#fff9fb;
+        background:#fff9fc;
     }
 
     tr:hover{
-        background:#ffeaf1;
+        background:#ffeef5;
     }
 
     img{
         width:200px;
-        border-radius:12px;
-        border:3px solid #ffd6e3;
-        padding:3px;
+        border-radius:15px;
+        border:3px solid #ffd6e5;
+        padding:4px;
         background:white;
+    }
+
+    h2{
+        text-align:center;
+        color:#e87aa4;
+        margin-bottom:30px;
+        font-size:32px;
+        font-weight:bold;
+        letter-spacing:1px;
+    }
+
+    form{
+        text-align:center;
+        margin-top:35px;
+    }
+
+    input[type="submit"]{
+        background:#f7a9c4;
+        color:white;
+        border:none;
+        border-radius:30px;
+        padding:14px 40px;
+        font-size:17px;
+        font-weight:bold;
+        cursor:pointer;
+        box-shadow:0 6px 15px rgba(247,169,196,.35);
+        transition:.3s;
+    }
+
+    input[type="submit"]:hover{
+        background:#ee8fb3;
+        transform:translateY(-3px);
+        box-shadow:0 10px 20px rgba(247,169,196,.45);
+    }
+
+    input[type="submit"]:active{
+        transform:scale(.97);
     }
 </style>
 <h2 style="
@@ -109,6 +146,8 @@ font-weight:bold;
             }
         ?>
     </table>
+    <form action="room.php" method="post">
+        <input type="submit" value="room">
 
 </body>
 </html>
