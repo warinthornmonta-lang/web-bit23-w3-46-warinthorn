@@ -4,108 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    body{
-        margin:0;
-        padding:40px;
-        background:linear-gradient(135deg,#fff8fb,#ffeef5);
-        font-family:"Tahoma",sans-serif;
-        color:#666;
+    <style>
+    * {
+        box-sizing: border-box;
     }
 
-    table{
-        width:90%;
-        margin:auto;
-        border-collapse:collapse;
-        background:#ffffff;
-        border-radius:18px;
-        overflow:hidden;
-        box-shadow:0 10px 25px rgba(255,182,193,.25);
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fcebf3);
+        color: #6b5360;
+        min-height: 100vh;
     }
 
-    thead{
-        background:#f7a9c4;
-        color:white;
+    /* Navbar */
+    .navbar {
+        background: #f7b6cd;
+        padding: 18px 0;
+        box-shadow: 0 4px 15px rgba(190, 120, 150, 0.2);
     }
 
-    th{
-        padding:18px;
-        font-size:17px;
-        letter-spacing:.5px;
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
     }
 
-    td{
-        padding:16px;
-        text-align:center;
-        border-bottom:1px solid #ffe0ea;
-        transition:.3s;
+    .navbar a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        background: #e99ab7;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s;
+        box-shadow: 0 3px 8px rgba(180, 100, 130, 0.2);
     }
 
-    tr:nth-child(even){
-        background:#fff9fc;
+    .navbar a:hover {
+        background: #dc82a5;
+        transform: translateY(-3px);
     }
 
-    tr:hover{
-        background:#ffeef5;
+    /* Table */
+    table {
+        width: 90%;
+        margin: 40px auto 25px;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 8px 25px rgba(190, 120, 150, 0.2);
+        border: 1px solid #f5cbd9;
     }
 
-    img{
-        width:200px;
-        border-radius:15px;
-        border:3px solid #ffd6e5;
-        padding:4px;
-        background:white;
+    th {
+        background: #efa9c2;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
     }
 
-    h2{
-        text-align:center;
-        color:#e87aa4;
-        margin-bottom:30px;
-        font-size:32px;
-        font-weight:bold;
-        letter-spacing:1px;
+    td {
+        padding: 14px;
+        text-align: center;
+        border: none;
+        border-bottom: 1px solid #f7d9e3;
     }
 
-    form{
-        text-align:center;
-        margin-top:35px;
+    tr:nth-child(even) {
+        background: #fff7fa;
     }
 
-    input[type="submit"]{
-        background:#f7a9c4;
-        color:white;
-        border:none;
-        border-radius:30px;
-        padding:14px 40px;
-        font-size:17px;
-        font-weight:bold;
-        cursor:pointer;
-        box-shadow:0 6px 15px rgba(247,169,196,.35);
-        transition:.3s;
+    tr:hover {
+        background: #ffe5ee;
     }
 
-    input[type="submit"]:hover{
-        background:#ee8fb3;
-        transform:translateY(-3px);
-        box-shadow:0 10px 20px rgba(247,169,196,.45);
+    /* รูปภาพ */
+    td img {
+        width: 200px !important;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 4px solid #f8cfdd;
+        box-shadow: 0 4px 10px rgba(180, 100, 130, 0.2);
     }
 
-    input[type="submit"]:active{
-        transform:scale(.97);
+    /* ปุ่ม */
+    form {
+        text-align: center;
+        margin: 25px;
+    }
+
+    input[type="submit"] {
+        background: #e99ab7;
+        color: white;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(180, 100, 130, 0.2);
+        transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background: #dc82a5;
+        transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 40px !important;
+        background: #e99ab7 !important;
+        color: white !important;
+        border-radius: 25px 25px 0 0;
+        box-shadow: 0 -3px 15px rgba(190, 120, 150, 0.15);
+    }
+
+    /* มือถือ */
+    @media (max-width: 700px) {
+
+        .navbar ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar a {
+            width: 220px;
+            text-align: center;
+        }
+
+        table {
+            width: 95%;
+            font-size: 13px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+        }
+
+        td img {
+            width: 100px !important;
+            height: 80px;
+        }
     }
 </style>
-<h2 style="
-text-align:center;
-color:#e87aa4;
-margin-bottom:25px;
-font-size:30px;
-font-weight:bold;
-">
-🌸 รายการผู้เข้าพัก 🌸
-</h2>
+</head>
+
 <body>
     
+<nav class="navbar">
+    <ul>
+        <li><a href="index.php">ประวัติ</a></li>
+        <li><a href="manage.php">แก้ไขการจอง</a></li>
+        <li><a href="room.php">ห้อง</a></li>
+    </ul>
+</nav>
+
     <?php
         include "action/connect.php";
         //       ดึง   ทั้งหมด จาก ตาราง orders
@@ -148,6 +212,18 @@ font-weight:bold;
     </table>
     <form action="room.php" method="post">
         <input type="submit" value="room">
+
+
+        <footer style="
+    margin-top:30px;
+    padding:20px;
+    background:#0b6fc2;
+    color:white;
+    text-align:center;
+    font-size:16px;
+">
+    warinthorn monta BIT.2/3 NO.46
+</footer>
 
 </body>
 </html>
